@@ -23,6 +23,15 @@ client.connect(err => {
       res.send(result.insertedCount > 0)
     })
   })
+
+  app.get('/events', (req,res)=>{
+    queryEmail = req.query.email;
+    registrations.find({email: queryEmail})
+    .toArray((err, documents) => {
+      res.status(200).send(documents)
+    })
+  })
+
 });
 
 
