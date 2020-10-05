@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import Task from '../Task/Task';
 import './EventTasks.css';
@@ -6,10 +7,10 @@ import './EventTasks.css';
 const EventTasks = () => {
 
     const [events , setEvents ] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useState('mainulislamfaruqi@gmail.com')
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(()=> {
-        fetch('https://secret-wildwood-13220.herokuapp.com/events?email=' + loggedInUser, {
+        fetch('https://secret-wildwood-13220.herokuapp.com/events?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',
@@ -18,7 +19,6 @@ const EventTasks = () => {
         .then(res => res.json())
         .then(data=>{
             setEvents(data);
-            console.log(data)
         })
     },[])
     return (
