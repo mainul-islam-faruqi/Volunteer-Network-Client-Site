@@ -10,7 +10,7 @@ const EventTasks = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(()=> {
-        fetch('https://secret-wildwood-13220.herokuapp.com/events?email=' + loggedInUser.email, {
+        fetch('https://secret-wildwood-13220.herokuapp.com/events?email=mainulislamfaruqi@gmail.com' , {
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',
