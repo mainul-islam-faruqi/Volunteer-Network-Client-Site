@@ -1,0 +1,47 @@
+.header{
+    margin: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.logo > img{
+    width: 200px;
+}
+
+.headerOptions{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.link{
+    color: #0B0B0B;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+
+button {
+    background: #3F90FC;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    width: 140px;
+    margin-left: 10px;
+    margin-top: -5px !important;
+}
+.linkButton {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.linkButton:hover{
+    color: #f4f4f8;
+    text-decoration: none;
+}
+
+.admin{
+    background: #434141;
+}

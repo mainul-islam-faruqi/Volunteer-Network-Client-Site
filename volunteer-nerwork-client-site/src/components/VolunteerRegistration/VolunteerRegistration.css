@@ -1,0 +1,33 @@
+.RegisterVolunteer{
+    text-align: center;
+}
+
+.logo{
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+form {
+    width: 550px;
+    height: 520px;
+    margin: auto;
+    border: 1px solid #E5E5E5;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.RegisterVolunteer > form > input{
+    width: 98%;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    margin-top: 20px;
+    outline-width: 0;
+}
+
+
+
+

@@ -1,0 +1,10 @@
+.eventTask{
+    background-color: #E5E5E5 !important;
+}
+
+.task{
+    margin: 80px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
