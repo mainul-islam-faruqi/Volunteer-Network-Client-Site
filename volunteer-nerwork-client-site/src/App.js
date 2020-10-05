@@ -10,6 +10,7 @@ import VolunteerRegistration from './components/VolunteerRegistration/VolunteerR
 import Login from './components/Login/Login';
 import AddEvent from './components/AddEvent/AddEvent';
 import EventTasks from './components/EventTasks/EventTasks';
+import Admin from './components/Admin/Admin';
 
 export const UserContext = createContext();
 
@@ -20,9 +21,7 @@ function App() {
    
       <Router>
         <Switch>
-        <Route exact path='/'>
-            <Home/>
-          </Route>
+          
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -35,7 +34,12 @@ function App() {
           <Route path="/eventtasks">
             <EventTasks/>
           </Route>
-          
+          <Route path='/admin'>
+            <Admin/>
+          </Route>
+          <Route exact path='/'>
+            <Home/>
+          </Route>
         </Switch>
       </Router>
     

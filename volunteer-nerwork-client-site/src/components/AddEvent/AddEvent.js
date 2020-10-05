@@ -47,20 +47,8 @@ const AddEvent = () => {
 
 
     return (
-        <div className="addEvent">
-            <div className="eventHeader">
-                <Link to="/" className="logo"> <img  src={logo} alt="" /> </Link>
-                <h3> Add event</h3>
-            </div>
-            <div className="eventOptions">
-                <div className="eventOptionLeft">
-                    <p> <img src={userIcon} className="icon" alt="" /> Volunteer register list </p>
-                    <p style={{ color: "#207FEE", fontWeight: '600' }}> <img src={plusIcon} className="icon" alt="" /> Add event </p>
-                </div>
-
-                <div className="eventOptionRight">
-
-                    {
+        <>
+             {
                         event.success ? <Alert severity="success"> Registration Successful — check it out!</Alert> : event.success = ""
                     }
 
@@ -117,11 +105,7 @@ const AddEvent = () => {
                         </div>
 
                     </form>
-                </div>
-
-            </div>
-
-        </div>
+        </>
     );
 };
 

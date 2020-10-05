@@ -19,7 +19,7 @@ const Header = () => {
                 <h4> <Link to="/" className="link"> Home </Link>  </h4>
                 <h4> <Link to="/donation" className="link" > Donation </Link>  </h4>
                 <h4> <Link to="/eventtasks" className="link" > Events </Link>  </h4>
-                <h4> <Link to="/addevent" className="link" > AddEvent </Link>  </h4>
+                <h4> <Link to="/blog" className="link" > Blog </Link>  </h4>
                 
                 {
                     loggedInUser.name? <h4 style={{color:"#3F90FC"}}> {loggedInUser.name} </h4>

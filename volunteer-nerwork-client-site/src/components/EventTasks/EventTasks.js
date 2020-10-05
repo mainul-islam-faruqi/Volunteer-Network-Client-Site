@@ -22,7 +22,7 @@ const EventTasks = () => {
         })
     },[])
     return (
-        <div className="eventTasks" style={{background: "#F8FAFC",height: " 100vh"}}>
+        <div className="eventTasks" style={{background: "#F4F7FC",height: " 100vh"}}>
             <Header/>
 
             <div className="task  row row-cols-1 row-cols-md-3 ">
