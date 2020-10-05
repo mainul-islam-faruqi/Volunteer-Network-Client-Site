@@ -1,6 +1,6 @@
 
 .headerImg{
-    opacity: .1;
+    opacity: .06;
     position: absolute;
     top: 0;
     width: 100%;
@@ -9,7 +9,7 @@
 
 .headerImg > img{
     width: 100%;
-    height: 100vh;
+    height: 70vh;
 }
 
 .searchInput{

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -11,9 +11,13 @@ import Login from './components/Login/Login';
 import AddEvent from './components/AddEvent/AddEvent';
 import EventTasks from './components/EventTasks/EventTasks';
 
+export const UserContext = createContext();
+
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}> 
+   
       <Router>
         <Switch>
         <Route exact path='/'>
@@ -34,7 +38,8 @@ function App() {
           
         </Switch>
       </Router>
-    </div>
+    
+    </UserContext.Provider>
   );
 }
 

@@ -28,6 +28,12 @@ p{
     margin-bottom: 10px;
 }
 
+.googleLogin > p {
+    padding-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'roboto';
+}
 
 .googleLogo{
     position: absolute;
