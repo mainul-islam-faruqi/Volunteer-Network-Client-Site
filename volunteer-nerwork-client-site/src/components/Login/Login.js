@@ -27,10 +27,9 @@ const Login = () => {
           
         });
       }
-      
+
     return (
         <div className="login">
-            <h1> {loggedInUser.name} </h1>
             <Link to="/"> <img className="logo" src={logo} alt="" /> </Link>
             
             <form className="login-form" action="">

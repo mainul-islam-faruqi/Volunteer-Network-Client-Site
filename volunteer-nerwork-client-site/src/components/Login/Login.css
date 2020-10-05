@@ -26,6 +26,7 @@ p{
     width: 30rem;
     height: 45px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .googleLogin > p {
