@@ -49,62 +49,62 @@ const AddEvent = () => {
     return (
         <>
              {
-                        event.success ? <Alert severity="success"> Registration Successful — check it out!</Alert> : event.success = ""
-                    }
+                event.success ? <Alert severity="success"> Registration Successful — check it out!</Alert> : event.success = ""
+            }
 
-                    <form onSubmit={handleEvent} className="form " action="" enctype="multipart/form-data">
-                        <div className="formLeft">
-                            <h5>Event Title </h5>
-                            <input type="text" name="title"
-                            
-                                placeholder="Enter title" id=""
-                                onChange={handleChange}
-                            />
+            <form onSubmit={handleEvent} className="form " action="" enctype="multipart/form-data">
+                <div className="formLeft">
+                    <h5>Event Title </h5>
+                    <input type="text" name="title"
+                    
+                        placeholder="Enter title" id=""
+                        onChange={handleChange}
+                    />
 
-                            <h5> Description </h5>
-                            <input type="text" name="description"
-                                placeholder="Enter Description " id=""
-                                onChange={handleChange}
-                                style={{ paddingBottom: " 70px", paddingTop: "15px" }}
-                            />
-                        </div>
+                    <h5> Description </h5>
+                    <input type="text" name="description"
+                        placeholder="Enter Description " id=""
+                        onChange={handleChange}
+                        style={{ paddingBottom: " 70px", paddingTop: "15px" }}
+                    />
+                </div>
 
-                        <div className="formRight">
-                            <h5>Event Date </h5>
-                            <input type="date" name="date"
-                                placeholder="Enter title" id=""
-                                onChange={handleChange}
-                                style={{color: "#C9C9C9"}}
-                            />
+                <div className="formRight">
+                    <h5>Event Date </h5>
+                    <input type="date" name="date"
+                        placeholder="Enter title" id=""
+                        onChange={handleChange}
+                        style={{color: "#C9C9C9"}}
+                    />
 
-                            <h5> Banner </h5>
-                            <div className="uploadFile">
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    className="custom-file-input"
-                                    onChange={(e) => setSelectedFile(e.target.files[0])}
-                                />
-                                <div id="uploadImageText"> <img className='uploadImage' src={uploadIcon} alt="" /> Upload image </div>
-                            </div>
+                    <h5> Banner </h5>
+                    <div className="uploadFile">
+                        <input
+                            type="file"
+                            accept="image/*"
+                            className="custom-file-input"
+                            onChange={(e) => setSelectedFile(e.target.files[0])}
+                        />
+                        <div id="uploadImageText"> <img className='uploadImage' src={uploadIcon} alt="" /> Upload image </div>
+                    </div>
 
-                            <input
-                                style={{
-                                    background: "#3F90FC",
-                                    height: "35px",
-                                    color: "white",
-                                    marginTop: "40px",
-                                    fontSize: "1.2rem",
-                                    borderRadius: "5px",
-                                }}
-                                type="submit"
-                                value="Submit"
-                                
-                            />
+                    <input
+                        style={{
+                            background: "#3F90FC",
+                            height: "35px",
+                            color: "white",
+                            marginTop: "40px",
+                            fontSize: "1.2rem",
+                            borderRadius: "5px",
+                        }}
+                        type="submit"
+                        value="Submit"
+                        
+                    />
 
-                        </div>
+                </div>
 
-                    </form>
+            </form>
         </>
     );
 };

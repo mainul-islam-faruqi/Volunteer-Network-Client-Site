@@ -12,14 +12,14 @@ const VolunteerRegistration = () => {
     const {orgName} = useParams();
     const history = useHistory();
 
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        date: '',
-        description: '',
-        organization: '',
-        success: ''
-    })
+    // const [user, setUser] = useState({
+    //     name: '',
+    //     email: '',
+    //     date: '',
+    //     description: '',
+    //     organization: '',
+    //     success: ''
+    // })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ const VolunteerRegistration = () => {
         })
         .then(res => res.json())
         .then(data => {
-            user.success = "Registration Successful"
+            loggedInUser.success = "Registration Successful"
             history.push('/eventtasks')
             console.log(loggedInUser)
         })
@@ -53,9 +53,9 @@ const VolunteerRegistration = () => {
 
     return (
         <div className="RegisterVolunteer">
-            <div className="success__alert">
+            <div className="success__alert mt-4 w-50 mx-auto">
             {
-                user.success ? <Alert severity="success"> Registration Successful — check it out!</Alert> : user.success = ""
+                loggedInUser.success ? <Alert severity="success"> Registration Successful — check it out!</Alert> : loggedInUser.success = ""
             }
             </div>
 
