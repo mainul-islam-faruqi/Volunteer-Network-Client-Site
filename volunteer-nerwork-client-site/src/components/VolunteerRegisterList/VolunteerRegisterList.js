@@ -17,7 +17,7 @@ const VolunteerRegisterList = () => {
     }, [])
 
     const deleteRegistration = (id) => {
-        fetch('http://localhost:5000/delete', {
+        fetch('https://secret-wildwood-13220.herokuapp.com/delete', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
