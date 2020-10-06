@@ -9,7 +9,6 @@ const VolunteerRegistration = () => {
 
     const [loggedInUser,setLoggedInUser] = useContext(UserContext);
 
-    const {orgName} = useParams();
     const history = useHistory();
 
   
@@ -65,7 +64,7 @@ const VolunteerRegistration = () => {
 
                     <input type="text" name="description" onChange={handleChange} placeholder="Description" id=""  required/>
 
-                    <input type="text" name="organization" onBlur={handleChange} placeholder="Organize books at the library." id="" value={orgName} required/>
+                    <input type="text" name="organization" onChange={handleChange} placeholder="Organize books at the library." id="" value={loggedInUser.organization} required/>
 
                     <input 
                         style={{ 

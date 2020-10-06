@@ -8,7 +8,7 @@ const SingleVolunteerOrg = ({organization}) => {
 
     const handleRegistration = (orgName) => {
         history.push(`${orgName}/registration`)
-        setLoggedInUser({...loggedInUser, pic: organization.pic})
+        setLoggedInUser({...loggedInUser, pic: organization.pic, organization: organization.name})
     }
     return (
         <div className="col col-sm-6 col-md-4 col-lg-3 col-xl-3">

@@ -1,6 +1,26 @@
 import React from 'react';
 
-const Task = ({event}) => {
+const Task = ({event,events, setEvents}) => {
+
+    const cancelRegistration = (id) => {
+        fetch('https://secret-wildwood-13220.herokuapp.com/delete', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                id: id
+            }
+        })
+            .then(res => res.json())
+            .then(result => {
+                const remainingEvents = events.filter(data => data._id !== id)
+                if (result) {
+                    setEvents(remainingEvents)
+                }
+            })
+    }
+
+
+
     return (
         <div  class="card mb-3 col-sm-12 col-md-12 col-lg-5 col-xl-5 mx-auto " style={{minWidth: "450px",borderRadius: "7px",margin:"50px !important"}}>
                 <div class="row no-gutters border-0">
@@ -13,7 +33,7 @@ const Task = ({event}) => {
                         <h4 class="card-title font-weight-bold"> {event?.organization} </h4>
                         <p class="card-text">  29 sep, 2020  </p>
                         <div className="d-flex justify-content-end">
-                            <button className="btn btn-light"> Cancel </button>
+                            <button className="btn btn-light" onClick={()=> cancelRegistration(event._id)} > Cancel </button>
                         </div>
                         
                     </div>

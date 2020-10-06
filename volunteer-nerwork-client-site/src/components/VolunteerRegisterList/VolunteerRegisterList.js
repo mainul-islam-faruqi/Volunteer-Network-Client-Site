@@ -11,7 +11,6 @@ const VolunteerRegisterList = () => {
             .then(data => {
                 setRegList(data)
             })
-        console.log(regList);
 
 
     }, [])
@@ -32,6 +31,7 @@ const VolunteerRegisterList = () => {
                 }
             })
     }
+
     return (
         <div className=" bg-white pt-5 pl-4 pr-4 m-4 " style={{ borderRadius: "20px",minHeight: "150px"}} >
             <table className="table table-borderless ">

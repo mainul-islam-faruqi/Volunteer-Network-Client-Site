@@ -39,7 +39,7 @@ const AddEvent = () => {
             })
     }
 
-
+ 
 
     return (
         <>
@@ -89,7 +89,8 @@ const AddEvent = () => {
                             background: "#3F90FC",
                             height: "35px",
                             color: "white",
-                            marginTop: "40px",
+                            marginTop: "20px",
+                            paddingBottom: "5px",
                             fontSize: "1.2rem",
                             borderRadius: "5px",
                         }}
