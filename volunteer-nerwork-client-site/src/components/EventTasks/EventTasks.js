@@ -25,7 +25,7 @@ const EventTasks = () => {
         <div className="eventTasks" style={{background: "#F4F7FC",height: " 100vh"}}>
             <Header/>
 
-            <div className="task  row row-cols-1 row-cols-md-3 ">
+            <div className="task  row row-cols-1 row-cols-md-3 border border-light ">
 
                     {
                         events.map(event => <Task event={event}> </Task>)

@@ -23,12 +23,7 @@ const AddEvent = () => {
         setEvent(newEventInfo);
     };
 
-    // const handleSelectedFile = (e) => {
-    //     if(e.target.files){
-    //         const newFile = e.target.files[0]
-    //         setSelectedFile(newFile);
-    //     }
-    // }
+  
 
     const handleEvent = (e) => {
         e.preventDefault();
@@ -76,6 +71,7 @@ const AddEvent = () => {
                         onChange={handleChange}
                         style={{color: "#C9C9C9"}}
                     />
+
 
                     <h5> Banner </h5>
                     <div className="uploadFile">

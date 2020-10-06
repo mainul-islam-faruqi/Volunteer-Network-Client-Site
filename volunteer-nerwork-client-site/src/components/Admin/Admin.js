@@ -7,6 +7,8 @@ import uploadIcon from '../../images/logos/cloud-upload-outline 1.png';
 import Alert from '@material-ui/lab/Alert';
 import { Link } from 'react-router-dom';
 import AddEvent from '../AddEvent/AddEvent';
+import VolunteerRegistration from '../VolunteerRegistration/VolunteerRegistration';
+import VolunteerRegisterList from '../VolunteerRegisterList/VolunteerRegisterList';
 
 const Admin = () => {
 
@@ -60,6 +62,7 @@ const Admin = () => {
 
                 <div className="eventOptionRight">
                     <AddEvent/>
+                    <VolunteerRegisterList/>
                 </div>
 
             </div>
