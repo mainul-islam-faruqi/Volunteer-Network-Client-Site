@@ -57,11 +57,24 @@ const [events , setEvents] = useState();
             </div>
             <div className="row organizations">
                 {
-                    fakeData.map(item => <SingleVolunteerOrg organization={item} />)
+                    fakeData.map((item, i)=> {
+                        let colors = ['#FFBD3E', '#FF7044', '#3F90FC', '#421FCF'];
+                        const random = Math.floor(Math.random()*4)
+                        return(
+                            <SingleVolunteerOrg organization={item} textBgColor={colors[random]}  key={i} />
+                        )
+                    })
 
                 }
+
                 {
-                    events?.map(item => <SingleVolunteerOrg organization={item} />)
+                    events?.map((item) => {
+                        let colors = ['#FFBD3E', '#FF7044', '#3F90FC', '#421FCF'];
+                        const random = Math.floor(Math.random()*4)
+                        return(
+                            <SingleVolunteerOrg organization={item} textBgColor={colors[random]}  key={item._id} />
+                        )
+                    })
                 }
             </div>
         </div>

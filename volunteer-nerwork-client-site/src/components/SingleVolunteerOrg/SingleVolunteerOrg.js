@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
+import './SingleVolunteerOrg.css';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 
-const SingleVolunteerOrg = ({organization}) => {
+const SingleVolunteerOrg = ({organization, textBgColor}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
 
@@ -13,16 +14,23 @@ const SingleVolunteerOrg = ({organization}) => {
     return (
         <div className="col col-sm-6 col-md-4 col-lg-3 col-xl-3">
             <div
-                style={{cursor:"pointer"}} 
+                style={{cursor:"pointer", }} 
                 onClick={()=>handleRegistration(organization.name)}
             > 
-                <img  
-                    style={{height: "20rem", width: "220px",margin: ".7rem "}} 
-                    src={require(`../../images/images/compImages/${organization.pic}-min.png`)} 
-                    className="img-fluid"
-                    alt=""
+                <div className="imageContainer">
+                    <img 
+                        src={require(`../../images/images/compImages/${organization.pic}-min.png`)} 
+                        className="img-fluid eventImage"
+                        alt=""
                     />
-                <h5 className="text-center "> {organization.name}</h5>
+                        
+                    <h5 style={{ backgroundColor: textBgColor }} className="text-center eventText"> 
+                        {organization.name}
+                    </h5>
+                    
+                </div>
+                
+                
             </div>
             
         </div>

@@ -1,0 +1,23 @@
+.imageContainer{
+    position: relative;
+    height: 20rem;
+    width: 250px;
+    margin: .7rem;
+}
+
+.eventImage{
+    min-height: 16rem;
+}
+
+.eventText{
+    position: absolute;
+    top: 230px;
+    text-align: center;
+    height: 70px;
+    width: 250px;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    padding-top: 10px;
+}
+
+
