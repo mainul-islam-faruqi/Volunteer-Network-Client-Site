@@ -12,14 +12,7 @@ const VolunteerRegistration = () => {
     const {orgName} = useParams();
     const history = useHistory();
 
-    // const [user, setUser] = useState({
-    //     name: '',
-    //     email: '',
-    //     date: '',
-    //     description: '',
-    //     organization: '',
-    //     success: ''
-    // })
+  
 
     const handleSubmit = (e) => {
         e.preventDefault();
