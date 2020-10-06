@@ -33,7 +33,6 @@ const VolunteerRegistration = () => {
         .then(data => {
             loggedInUser.success = "Registration Successful"
             history.push('/eventtasks')
-            console.log(loggedInUser)
         })
 
     }

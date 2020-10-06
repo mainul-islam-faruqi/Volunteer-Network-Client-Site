@@ -3,51 +3,36 @@ import './Admin.css';
 import logo from '../../images/logos/Group 1329.png';
 import userIcon from '../../images/logos/users-alt 1.png';
 import plusIcon from '../../images/logos/plus 1.png';
-import uploadIcon from '../../images/logos/cloud-upload-outline 1.png';
-import Alert from '@material-ui/lab/Alert';
 import { Link } from 'react-router-dom';
 import AddEvent from '../AddEvent/AddEvent';
-import VolunteerRegistration from '../VolunteerRegistration/VolunteerRegistration';
 import VolunteerRegisterList from '../VolunteerRegisterList/VolunteerRegisterList';
 
 const Admin = () => {
 
-    const [event, setEvent] = useState({
-        title: '',
-        description: '',
-        date: '',
-        success: '',
-    });
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [activeRegList, setActiveRegList] = useState(true);
+    const [activeEventForm, setActiveEventForm] = useState(false);
 
-    const handleChange = (e) => {
-        const newEventInfo = { ...event };
-        newEventInfo[e.target.name] = e.target.value;
-        setEvent(newEventInfo);
-    };
 
-    // const handleSelectedFile = (e) => {
-    //     if(e.target.files){
-    //         const newFile = e.target.files[0]
-    //         setSelectedFile(newFile);
-    //     }
-    // }
+    let activeStyle = {
+        color: "#207FEE", 
+            fontWeight: '600' 
+        }
 
-    const handleEvent = (e) => {
-        e.preventDefault();
-        const eventInfo = { ...event, ...selectedFile };
-        fetch('https://secret-wildwood-13220.herokuapp.com/addEvent', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(eventInfo)
-        })
-            .then(res => res.json())
-            .then(data => {
-                event.success = "Registration Successful"
-            })
+    const handleRegList = ()=> {
+        setActiveRegList(true)
+        setActiveEventForm(false)
     }
 
+    const handleEventForm = () => {
+        setActiveRegList(false)
+        setActiveEventForm(true)
+    }
 
+    // const activeHandler = (e)=>{
+    //     setActiveRegList(!activeRegList)
+    //     setActiveEventForm(!activeEventForm)
+    // } 
+    
     return (
         <div className="addmin">
             <div className="eventHeader">
@@ -56,13 +41,19 @@ const Admin = () => {
             </div>
             <div className="eventOptions">
                 <div className="eventOptionLeft">
-                    <p> <img src={userIcon} className="icon" alt="" /> Volunteer register list </p>
-                    <p style={{ color: "#207FEE", fontWeight: '600' }}> <img src={plusIcon} className="icon" alt="" /> Add event </p>
+                    <p style={activeRegList?activeStyle:{}} onClick={(e)=>handleRegList(e)}> <img src={userIcon} className="icon" alt="" /> Volunteer register list </p>
+                    <p style={activeEventForm?activeStyle:{}} onClick={(e)=>handleEventForm(e)} > <img src={plusIcon} className="icon" alt="" /> Add event </p>
                 </div>
 
                 <div className="eventOptionRight">
-                    <AddEvent/>
-                    <VolunteerRegisterList/>
+
+                    <div className="eventForm" style={{display: activeEventForm? "block": "none" }} >
+                        <AddEvent  />
+                    </div>
+                    <div className="registerList" style={{display: activeRegList? "block": "none"}}>
+                        <VolunteerRegisterList />
+                    </div>
+                    
                 </div>
 
             </div>

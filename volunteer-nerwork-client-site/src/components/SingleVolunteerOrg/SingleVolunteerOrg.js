@@ -18,7 +18,7 @@ const SingleVolunteerOrg = ({organization}) => {
             > 
                 <img  
                     style={{height: "20rem", width: "220px",margin: ".7rem "}} 
-                    src={require(`../../images/images/${organization.pic}.png`)} 
+                    src={require(`../../images/images/compImages/${organization.pic}-min.png`)} 
                     className="img-fluid"
                     alt=""
                     />

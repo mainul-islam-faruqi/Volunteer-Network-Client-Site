@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const VolunteerRegisterList = () => {
     const [regList, setRegList] = useState([]);
 
+
     useEffect(()=> {
         fetch('https://secret-wildwood-13220.herokuapp.com/volunteerRegistration')
         .then(res => res.json())
@@ -17,7 +18,7 @@ const VolunteerRegisterList = () => {
     },[])
 
     const deleteRegistration = ( id) => {
-        fetch('https://secret-wildwood-13220.herokuapp.com/delete', {
+        fetch('http://localhost:5000/delete', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ const VolunteerRegisterList = () => {
         })
     }
     return (
-        <div className=" bg-white pt-5 pl-4 pr-4" >
+        <div className=" bg-white pt-5 pl-4 pr-4 m-4" >
             <table className="table table-borderless ">
                 <thead>
                     <tr style={{background: "#F5F6FA",borderRadius: "13px",margin: "10px", color: "#686868"}}>
@@ -46,7 +47,7 @@ const VolunteerRegisterList = () => {
                 </thead>
                 {
                     regList.map(item => 
-                                    <tbody>
+                                    <tbody key={item._id}>
                                         <tr>
                                             <th scope="row"> {item.name} </th>
                                             <th > {item.email} </th>

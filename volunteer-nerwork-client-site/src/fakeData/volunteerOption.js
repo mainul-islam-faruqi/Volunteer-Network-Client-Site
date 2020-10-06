@@ -72,8 +72,8 @@ var fakeData = [
         pic: "babySit",
     },
     {
-        name: "Collect stuffed animals.",
-        pic: "stuffedAnimals",
+        name: "Extra Volunteer",
+        pic: "extraVolunteer",
     },
     {
         name: "Collect school supplies",
