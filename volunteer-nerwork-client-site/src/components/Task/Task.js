@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Task = ({event}) => {
-    console.log(event.pic)
     return (
         <div  class="card mb-3 col-sm-12 col-md-12 col-lg-5 col-xl-5 mx-auto " style={{minWidth: "450px",borderRadius: "7px",margin:"50px !important"}}>
                 <div class="row no-gutters border-0">

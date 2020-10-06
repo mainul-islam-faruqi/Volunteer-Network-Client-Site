@@ -15,7 +15,7 @@ const Admin = () => {
 
     let activeStyle = {
         color: "#207FEE", 
-            fontWeight: '600' 
+        fontWeight: '600',
         }
 
     const handleRegList = ()=> {
@@ -37,12 +37,12 @@ const Admin = () => {
         <div className="addmin">
             <div className="eventHeader">
                 <Link to="/" className="logo"> <img  src={logo} alt="" /> </Link>
-                <h3> Add event</h3>
+                <h3> { activeRegList? "Volunteer Registration List": "Add Event "} </h3>
             </div>
             <div className="eventOptions">
-                <div className="eventOptionLeft">
-                    <p style={activeRegList?activeStyle:{}} onClick={(e)=>handleRegList(e)}> <img src={userIcon} className="icon" alt="" /> Volunteer register list </p>
-                    <p style={activeEventForm?activeStyle:{}} onClick={(e)=>handleEventForm(e)} > <img src={plusIcon} className="icon" alt="" /> Add event </p>
+                <div className="eventOptionLeft" >
+                    <p style={activeRegList?activeStyle:{cursor: "pointer"}} onClick={(e)=>handleRegList(e)}> <img src={userIcon} className="icon" alt="" /> Volunteer register list </p>
+                    <p style={activeEventForm?activeStyle:{cursor:"pointer"}} onClick={(e)=>handleEventForm(e)} > <img src={plusIcon} className="icon" alt="" /> Add event </p>
                 </div>
 
                 <div className="eventOptionRight">
