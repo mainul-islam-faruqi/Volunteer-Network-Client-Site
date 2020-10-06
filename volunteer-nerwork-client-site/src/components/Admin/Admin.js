@@ -27,11 +27,6 @@ const Admin = () => {
         setActiveRegList(false)
         setActiveEventForm(true)
     }
-
-    // const activeHandler = (e)=>{
-    //     setActiveRegList(!activeRegList)
-    //     setActiveEventForm(!activeEventForm)
-    // } 
     
     return (
         <div className="addmin">

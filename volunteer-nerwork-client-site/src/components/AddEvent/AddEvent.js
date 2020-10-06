@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import './AddEvent.css';
-import logo from '../../images/logos/Group 1329.png';
-import userIcon from '../../images/logos/users-alt 1.png';
-import plusIcon from '../../images/logos/plus 1.png';
 import uploadIcon from '../../images/logos/cloud-upload-outline 1.png';
 import Alert from '@material-ui/lab/Alert';
-import { Link } from 'react-router-dom';
 
 const AddEvent = () => {
 
     const [event, setEvent] = useState({
-        title: '',
+        name: '',
         description: '',
         date: '',
         success: '',
+        pic:'riverClean',
     });
     const [selectedFile, setSelectedFile] = useState(null);
 
@@ -36,6 +33,7 @@ const AddEvent = () => {
             .then(res => res.json())
             .then(data => {
                 event.success = "Registration Successful"
+                setEvent(eventInfo);
             })
     }
 
@@ -50,7 +48,7 @@ const AddEvent = () => {
             <form onSubmit={handleEvent} className="form " action="" enctype="multipart/form-data">
                 <div className="formLeft">
                     <h5>Event Title </h5>
-                    <input type="text" name="title"
+                    <input type="text" name="name"
                     
                         placeholder="Enter title" id=""
                         onChange={handleChange}

@@ -5,11 +5,15 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import logo from '../../images/logos/Group 1329.png';
 import google from '../../images/logos/google-logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+
+    let {from} = location.state || {from: {pathname: "/"}}
 
     if(firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
@@ -23,6 +27,7 @@ const Login = () => {
           var { displayName, email } = result.user;
           const signedInUser = { name:displayName, email }
           setLoggedInUser(signedInUser)
+          history.replace(from)
         }).catch(function (error) {
           
         });

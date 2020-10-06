@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import Header from '../Header/Header';
 import headerImg from '../../images/meeting.jpg';
@@ -8,6 +8,22 @@ import SingleVolunteerOrg from '../SingleVolunteerOrg/SingleVolunteerOrg';
 
 
 const Home = () => {
+
+const [events , setEvents] = useState();
+
+    useEffect(()=> {
+        fetch('https://secret-wildwood-13220.herokuapp.com/events', {
+            method: 'GET',
+            headers: {
+                'Content-Type':'application/json',
+            }
+        })
+        .then(res => res.json())
+        .then(data=>{
+            setEvents(data);
+        })
+    },[])
+
     return (
         <div className="home">
             <Header/>
@@ -42,6 +58,10 @@ const Home = () => {
             <div className="row organizations">
                 {
                     fakeData.map(item => <SingleVolunteerOrg organization={item} />)
+
+                }
+                {
+                    events?.map(item => <SingleVolunteerOrg organization={item} />)
                 }
             </div>
         </div>

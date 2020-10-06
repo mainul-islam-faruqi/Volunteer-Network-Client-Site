@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import AddEvent from './components/AddEvent/AddEvent';
 import EventTasks from './components/EventTasks/EventTasks';
 import Admin from './components/Admin/Admin';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -25,9 +26,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/:orgName/registration">
+          <PrivateRoute path="/:orgName/registration">
             <VolunteerRegistration/>
-          </Route>
+          </PrivateRoute>
           <Route path="/addevent">
             <AddEvent></AddEvent>
           </Route>
