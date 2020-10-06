@@ -25,7 +25,7 @@ const Task = ({event,events, setEvents}) => {
         <div  class="card mb-3 col-sm-12 col-md-12 col-lg-5 col-xl-5 mx-auto " style={{minWidth: "450px",borderRadius: "7px",margin:"50px !important"}}>
                 <div class="row no-gutters border-0">
                     <div class="col-md-4">
-                    <img src={require(`../../images/images/${event.pic?event.pic:'riverClean'}.png`)} 
+                    <img src={require(`../../images/images/compImages/${event.pic?event.pic:'riverClean'}-min.png`)} 
                     className="card-img mt-3 mb-3" alt="..."/>
                 </div>
                     <div class="col-md-8">

@@ -26,21 +26,23 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+
           <PrivateRoute path="/:orgName/registration">
             <VolunteerRegistration/>
           </PrivateRoute>
-          <Route path="/addevent">
-            <AddEvent></AddEvent>
-          </Route>
-          <Route path="/eventtasks">
+
+          <PrivateRoute path="/eventtasks">
             <EventTasks/>
-          </Route>
-          <Route path='/admin'>
+          </PrivateRoute>
+
+          <PrivateRoute path='/admin'>
             <Admin/>
-          </Route>
+          </PrivateRoute>
+
           <Route exact path='/'>
             <Home/>
           </Route>
+          
         </Switch>
       </Router>
     

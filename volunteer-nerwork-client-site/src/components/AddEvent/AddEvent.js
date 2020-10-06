@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './AddEvent.css';
 import uploadIcon from '../../images/logos/cloud-upload-outline 1.png';
 import Alert from '@material-ui/lab/Alert';
+import { useHistory } from 'react-router-dom';
 
 const AddEvent = () => {
+    const history = useHistory();
 
     const [event, setEvent] = useState({
         name: '',
@@ -34,6 +36,7 @@ const AddEvent = () => {
             .then(data => {
                 event.success = "Registration Successful"
                 setEvent(eventInfo);
+                history.push('/')
             })
     }
 
