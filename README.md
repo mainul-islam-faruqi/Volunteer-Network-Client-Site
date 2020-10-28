@@ -1,4 +1,4 @@
-# Volunteer Network -A Event Manger website(Full-Stack)
+# Volunteer Network -An Event Manger website(Full-Stack)
 
 # Website Live Link: https://volunteer-network-59df7.web.app/
 
